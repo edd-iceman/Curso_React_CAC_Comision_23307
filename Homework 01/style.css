@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.joker{
+    /* Posicionamiento */
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    /* Estilos */
+    min-width: 700px;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../homework_01/joker_shooting_0.jpg);
+
+}
+
+.joker_activo{
+    background-image: url(../homework_01/joker_shooting.gif);
+}

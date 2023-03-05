@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clickable Image with GIF and Sound</title>
+	<style>
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.image-container {
+			position: relative;
+		}
+
+		.image {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			cursor: pointer;
+		}
+
+		.gif {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="image-container">
+			<img class="image" src="image.jpg" alt="Clickable Image">
+			<img class="gif" src="animated.gif" alt="Animated GIF">
+			<audio id="click-sound">
+				<source src="click.mp3" type="audio/mpeg">
+				<source src="click.ogg" type="audio/ogg">
+			</audio>
+		</div>
+	</div>
+
+	<script>
+		const image = document.querySelector('.image');
+		const gif = document.querySelector('.gif');
+		const clickSound = document.querySelector('#click-sound');
+
+		let isPlaying = false;
+
+		image.addEventListener('click', () => {
+			if (isPlaying) {
+				gif.style.display = 'none';
+				clickSound.pause();
+			} else {
+				gif.style.display = 'block';
+				clickSound.currentTime = 0;
+				clickSound.play();
+			}
+			isPlaying = !isPlaying;
+		});
+	</script>
+</body>
+</html>
+
+
+This code defines a container with a centered image that can be clicked to activate a GIF and a sound. 
+The CSS file defines the styles for the container, image, and GIF, while the JS file handles the click 
+event and toggles the visibility of the GIF and the playback of the sound.
+
+To use this code, replace the image.jpg, animated.gif, and click.mp3 (or click.ogg) files with
+ your own image, GIF, and sound files, respectively.
